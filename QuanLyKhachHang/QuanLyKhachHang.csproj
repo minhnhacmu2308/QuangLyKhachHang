@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DaiLyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModulesController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
@@ -202,6 +203,7 @@
     <Content Include="Views\Modules\Footer.cshtml" />
     <Content Include="Views\Modules\Menu.cshtml" />
     <Content Include="Views\NguoiDung\Index.cshtml" />
+    <Content Include="Views\DaiLy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

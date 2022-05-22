@@ -44,6 +44,7 @@
                             <th>Email</th>
                             <th>Nghê nghiệp</th>
                             <th>Loại khách hàng</th>
+                            <th>Vai trò</th>
                             <th>Hoạt động</th>
                         </tr>
                     </thead>
@@ -81,6 +82,19 @@
                             <td>
                                 @item.loaiKhachHang
                             </td>
+                            @if (item.role == 1)
+                            {
+                                <td>
+                                    Nhân Viên
+                                </td>
+                            }
+                            else
+                            {
+                        <td>
+                           Khách Hàng
+                        </td>
+                            }
+
                             <td>
                                 @{
                                     var idModel = "exampleModal" + item.idNguoiDung;
@@ -233,7 +247,7 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="category-film"
-                                                                   class="col-form-label">Chọn loai khách hàng:</label>
+                                                                   class="col-form-label">Chọn loai người dùng:</label>
                                                             <select class="form-select" name="loaiKhachHang" required aria-label="Default select example">
                                                                 @if (item.loaiKhachHang == "Bình Thường")
                                                                 {
@@ -356,9 +370,9 @@
                             </div>
                             <div class="mb-3">
                                 <label for="category-film"
-                                       class="col-form-label">Loại khách hàng:</label>
+                                       class="col-form-label">Loại người dùng:</label>
                                 <select class="form-select" name="loaiKhachHang" required aria-label="Default select example">
-                                    <option selected>Chọn loại khách hàng </option>
+                                    <option selected>Chọn loại người dùng </option>
                                     <option value="Bình Thường">Bình Thường</option>
                                     <option value="Thân Thiết">Thân Thiết</option>
                                 </select>
