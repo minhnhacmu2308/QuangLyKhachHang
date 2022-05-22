@@ -129,6 +129,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Dao\DaiLyDao.cs" />
+    <Compile Include="Dao\HopDongDao.cs" />
+    <Compile Include="Dao\NguoiDungDao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +201,7 @@
     <Content Include="Views\Modules\Header.cshtml" />
     <Content Include="Views\Modules\Footer.cshtml" />
     <Content Include="Views\Modules\Menu.cshtml" />
+    <Content Include="Views\NguoiDung\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
