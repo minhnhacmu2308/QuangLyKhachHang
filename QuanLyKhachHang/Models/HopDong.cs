@@ -27,6 +27,7 @@ namespace QuanLyKhachHang.Models
 
         public virtual NguoiDung NguoiDung { get; set; }
         public virtual DaiLy DaiLy { get; set; }
+        public DateTime createdAt { get; set; }
 
 
     }

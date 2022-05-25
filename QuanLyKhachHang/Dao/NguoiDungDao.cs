@@ -13,6 +13,11 @@ namespace QuanLyKhachHang.Dao
         {
             return myDb.nguoiDungs.ToList();
         }
+
+        public List<NguoiDung> GetKhachHang()
+        {
+            return myDb.nguoiDungs.Where(x => x.role == 2).ToList();
+        }
         public void Add(NguoiDung nguoiDung)
         {
             myDb.nguoiDungs.Add(nguoiDung);

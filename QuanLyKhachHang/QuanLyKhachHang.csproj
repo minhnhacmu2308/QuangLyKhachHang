@@ -130,6 +130,7 @@
     <Compile Include="Controllers\DaiLyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\HopDongController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Dao\DaiLyDao.cs" />
     <Compile Include="Dao\HopDongDao.cs" />
@@ -140,6 +141,10 @@
     <Compile Include="Migrations\202205211817483_new.cs" />
     <Compile Include="Migrations\202205211817483_new.designer.cs">
       <DependentUpon>202205211817483_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205251239595_a.cs" />
+    <Compile Include="Migrations\202205251239595_a.designer.cs">
+      <DependentUpon>202205251239595_a.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DaiLy.cs" />
@@ -204,6 +209,7 @@
     <Content Include="Views\Modules\Menu.cshtml" />
     <Content Include="Views\NguoiDung\Index.cshtml" />
     <Content Include="Views\DaiLy\Index.cshtml" />
+    <Content Include="Views\HopDong\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,6 +230,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205211817483_new.resx">
       <DependentUpon>202205211817483_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205251239595_a.resx">
+      <DependentUpon>202205251239595_a.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
