@@ -36,11 +36,11 @@
                     <thead style="color:#0d6efd ">
                         <tr>
                             <th>STT</th>
-                            <th>Tên người dùng</th>
-                            <th>Tên đại lý</th>
+                            <th>Nhân viên</th>
+                            <th>Đại lý</th>
                             <th>Tổng tiền</th>
                             <th>Ngày kí</th>
-                            <th>Thời hạn</th>
+                            <th>Thời hạn kết thúc</th>
                             <th>Ngày tạo</th>
                             <th>Hoạt động</th>
                         </tr>
@@ -105,7 +105,7 @@
                                             </div>
 
                                             <div class="modal-body">
-                                                Tên khách hàng : @item.NguoiDung.hoTen - Tên đại lý: @item.DaiLy.tenDaiLy
+                                                Hợp đồng của đại lý: @item.DaiLy.tenDaiLy
                                                 <form action="/HopDong/Delete" method="post">
                                                     <input type="hidden" class="form-control" id="idDaiLy" name="idHopDong" value="@item.idHopDong">
                                                     <div class="modal-footer" style="margin-top: 20px">
@@ -157,14 +157,14 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="category-film"
-                                                                   class="col-form-label">Khách hàng:</label>
+                                                                   class="col-form-label">Nhân viên:</label>
                                                             <select class="form-select" name="idNguoiDung" required aria-label="Default select example">
                                                                 <option selected value="@item.NguoiDung.idNguoiDung">@item.NguoiDung.hoTen</option>
                                                                 @foreach (var item1 in ViewBag.ListKH)
                                                                 {
                                                                     if (item.NguoiDung.idNguoiDung != item1.idNguoiDung)
                                                                     {
-                                                                        <option value="@item1.idDaiLy">@item1.tenDaiLy</option>
+                                                                        <option value="@item1.idNguoiDung">@item1.hoTen</option>
                                                                     }
 
                                                                 }
@@ -185,7 +185,7 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="category-film"
-                                                                   class="col-form-label">Thời hạn:</label>
+                                                                   class="col-form-label">Thời hạn kết thúc:</label>
                                                             <input type="date" class="form-control" value="@item.thoiHan" id="category-film" required name="thoiHan">
                                                         </div>
                                                     </div>
@@ -228,20 +228,22 @@
                                 <label for="category-film"
                                        class="col-form-label">Đại lý:</label>
                                 <select class="form-select" name="idDaiLy" required aria-label="Default select example">
+                                    <option selected value="">Chọn đại lý</option>
                                     @foreach (var item in ViewBag.ListDL)
                                     {
-                                        <option selected value="@item.idDaiLy">@item.tenDaiLy</option>
+                                        <option value="@item.idDaiLy">@item.tenDaiLy</option>
                                     }
                                 </select>
 
                             </div>
                             <div class="mb-3">
                                 <label for="category-film"
-                                       class="col-form-label">Khách hàng:</label>
+                                       class="col-form-label">Nhân viên:</label>
                                 <select class="form-select" name="idNguoiDung" required aria-label="Default select example">
+                                    <option selected value="">Chọn nhân viên</option>
                                     @foreach (var item in ViewBag.ListKH)
                                     {
-                                        <option selected value="@item.idNguoiDung">@item.hoTen</option>
+                                        <option value="@item.idNguoiDung">@item.hoTen</option>
                                     }
                                 </select>
                             </div>
@@ -260,7 +262,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="category-film"
-                                       class="col-form-label">Thời hạn:</label>
+                                       class="col-form-label">Thời hạn kết thúc:</label>
                                 <input type="date" class="form-control" id="category-film" required name="thoiHan">
                             </div>
 

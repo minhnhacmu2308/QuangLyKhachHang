@@ -11,7 +11,16 @@ namespace QuanLyKhachHang.Dao
         DBQLContext myDb = new DBQLContext();
         public List<NguoiDung> GetAll()
         {
-            return myDb.nguoiDungs.ToList();
+            return myDb.nguoiDungs.Where(x => x.role == 2).ToList();
+        }
+
+        public List<NguoiDung> ThanThiet()
+        {
+            return myDb.nguoiDungs.Where(x => x.loaiKhachHang == "Thân Thiết").ToList();
+        }
+        public List<NguoiDung> Nhanvien()
+        {
+            return myDb.nguoiDungs.Where(x => x.role == 1).ToList();
         }
 
         public List<NguoiDung> GetKhachHang()
@@ -29,6 +38,10 @@ namespace QuanLyKhachHang.Dao
             if (obj != null) { return true; }
             return false;
         }
+        public NguoiDung getId(int id)
+        {
+            return myDb.nguoiDungs.FirstOrDefault(x => x.idNguoiDung == id);
+        }
         public void Delete(int id)
         {
             var nguoiDung = myDb.nguoiDungs.FirstOrDefault(x => x.idNguoiDung == id);
@@ -45,7 +58,6 @@ namespace QuanLyKhachHang.Dao
             obj.gioiTinh = nguoiDung.gioiTinh;
             obj.email = nguoiDung.email;
             obj.ngheNghiep = nguoiDung.ngheNghiep;
-            obj.role = nguoiDung.role;
             obj.loaiKhachHang = nguoiDung.loaiKhachHang;
             myDb.SaveChanges();
         }

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <h4 class="mt-1">Thống kê danh sách khách hàng thân thiết</h4>
+
+        <div class="card mb-4">
+            <div class="card-header">
+            </div>
+
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead style="color:#0d6efd ">
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ và tên</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
+                            <th>Giới tính</th>
+                            <th>Email</th>
+                            <th>Nghê nghiệp</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{ var stt = 1;}
+                        @foreach (var item in ViewBag.List)
+                        {
+                            <tr>
+                                <td style="width:10px">@stt</td>
+                                <td>
+                                    @item.hoTen
+                                </td>
+                                <td>@item.diaChi</td>
+                                <td>@item.soDienThoai</td>
+                                <td>@item.gioiTinh</td>
+                                <td>
+                                    @item.email
+                                </td>
+                                <td>
+                                    @item.ngheNghiep
+                                </td>
+                            </tr>
+                            stt++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+

@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Month";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main>
+    <div class="container-fluid px-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <form method="POST" action="/HopDong/Month" class="register-form" id="register-form">
+                    <div class="row" style="justify-content:space-around !important">
+                        <div class="col-6">
+                            <label for="category-film"
+                                   class="col-form-label">Chọn tháng:</label>
+                            <input type="number" class="form-control" id="category-film" name="thang" required min="1" max="12">
+                        </div>
+                        <div class="col-6">
+                            <label for="category-film"
+                                   class="col-form-label"></label><br />
+                            <button type="submit" class="btn btn-success" style="margin-top:12px !important">
+                                Thống kê
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            @if (ViewBag.Thang != null)
+            {
+                <div style="margin:20px auto;">
+                    <h5>Thống kê báo cáo hợp đồng của tháng @ViewBag.Thang</h5>
+                </div>
+            }
+            else
+            {
+
+            }
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead style="color:#0d6efd ">
+                        <tr>
+                            <th>STT</th>
+                            <th>Nhân viên</th>
+                            <th>Đại lý</th>
+                            <th>Tổng tiền</th>
+                            <th>Ngày kí</th>
+                            <th>Thời hạn kết thúc</th>
+                            <th>Ngày tạo</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên người dùng</th>
+                            <th>Tên đại lý</th>
+                            <th>Ngày kí</th>
+                            <th>Thời hạn</th>
+                            <th>Ngày tạo</th>
+                            <th>Hoạt động</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{ var stt = 1;}
+                        @if (ViewBag.List != null)
+                        {
+                            foreach (var item in ViewBag.List)
+                            {
+                                <tr>
+                                    <td style="width:10px">@stt</td>
+                                    <td>
+                                        @item.NguoiDung.hoTen
+                                    </td>
+                                    <td>
+                                        @item.DaiLy.tenDaiLy
+                                    </td>
+                                    <td>
+                                        @item.tongTien
+                                    </td>
+                                    <td>
+                                        @item.ngayKy
+                                    </td>
+                                    <td>
+                                        @item.thoiHan
+                                    </td>
+                                    <td>
+                                        @item.createdAt
+                                    </td>
+
+
+                                </tr>
+                                stt++;
+                            }
+                        }
+                        else
+                        {
+
+                        }
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+

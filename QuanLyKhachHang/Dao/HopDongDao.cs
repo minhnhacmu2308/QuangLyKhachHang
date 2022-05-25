@@ -14,6 +14,21 @@ namespace QuanLyKhachHang.Dao
             return myDb.hopDongs.ToList();
         }
 
+        public List<HopDong> Ngay(DateTime day)
+        {
+            return myDb.hopDongs.Where(x => x.createdAt.Day == day.Day).ToList();
+        }
+
+        public List<HopDong> Thang(int month)
+        {
+            return myDb.hopDongs.Where(x => x.createdAt.Month == month).ToList();
+        }
+
+        public List<HopDong> Nhanvien(int id)
+        {
+            return myDb.hopDongs.Where(x => x.idNguoiDung == id).ToList();
+        }
+
         public void Add(HopDong hopDong)
         {
             myDb.hopDongs.Add(hopDong);

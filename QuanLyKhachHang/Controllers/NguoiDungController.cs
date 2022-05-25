@@ -19,6 +19,19 @@ namespace QuanLyKhachHang.Controllers
             return View();
         }
 
+        public ActionResult KHThanThiet()
+        {
+            ViewBag.List = nguoiDungDao.ThanThiet();
+            return View();
+        }
+
+        public ActionResult Nhanvien(string msg)
+        {
+            ViewBag.List = nguoiDungDao.Nhanvien();
+            ViewBag.Msg = msg;
+            return View();
+        }
+
         public ActionResult Add(NguoiDung nguoiDung)
         {
             bool checkExist = nguoiDungDao.checkExistEmail(nguoiDung.email);
@@ -28,8 +41,26 @@ namespace QuanLyKhachHang.Controllers
             }
             else
             {
+                nguoiDung.role = 2;
                 nguoiDungDao.Add(nguoiDung);
                 return RedirectToAction("Index", new { msg = "1" });
+            }
+
+        }
+
+        public ActionResult AddNV(NguoiDung nguoiDung)
+        {
+            bool checkExist = nguoiDungDao.checkExistEmail(nguoiDung.email);
+            if (checkExist)
+            {
+                return RedirectToAction("Nhanvien", new { msg = "2" });
+            }
+            else
+            {
+                nguoiDung.loaiKhachHang = "Nhân viên";
+                nguoiDung.role = 1;
+                nguoiDungDao.Add(nguoiDung);
+                return RedirectToAction("Nhanvien", new { msg = "1" });
             }
 
         }

@@ -210,6 +210,11 @@
     <Content Include="Views\NguoiDung\Index.cshtml" />
     <Content Include="Views\DaiLy\Index.cshtml" />
     <Content Include="Views\HopDong\Index.cshtml" />
+    <Content Include="Views\NguoiDung\Nhanvien.cshtml" />
+    <Content Include="Views\NguoiDung\KHThanThiet.cshtml" />
+    <Content Include="Views\HopDong\Day.cshtml" />
+    <Content Include="Views\HopDong\Month.cshtml" />
+    <Content Include="Views\HopDong\NhanVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
